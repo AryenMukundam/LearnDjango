@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth.urls import views as auth_views
 
 urlpatterns = [
     
     path('admin/', admin.site.urls),
-    path('tweet/' , include('tweet.urls'))# "For anything that starts with /tweet/, go look in tweet/urls.py to find more routes."
+    path('tweet_list/' , include('tweet.urls')),# "For anything that starts with /tweet_list/, go look in tweet/urls.py to find more routes."
+    path('accounts/' , include('django.contrib.auth.urls'))
 ] + static(settings.MEDIA_URL , document_root=settings.MEDIA_ROOT) # “this tells django Please serve files from MEDIA_ROOT when the browser asks for a URL starting with MEDIA_URL.”

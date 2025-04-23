@@ -133,6 +133,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # This is the actual folder on you
 STATIC_URL = '/static/' # This tells Django: “When rendering templates, use this URL prefix for static files.”
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]# This tells Django where to look for static files in your project during development.
 
+LOGIN_URL = '/accounts/login'
+LOGOUT_URL = '/accounts/logout'
+LOGIN_REDIRECT_URL = '/tweet_list/'
+
+LOGOUT_REDIRECT_URL = '/tweet_list/'
+
 
 
 
